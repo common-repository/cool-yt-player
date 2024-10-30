@@ -1,0 +1,209 @@
+/****************************************************************************************
+MANCA - Cool YT PLayer 1.0 - 21/06/2020 - /css/mcytp.css
+****************************************************************************************/
+/*Shortcode coolyt - Youtube Video Wrapper*/
+.coolyt-container {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+  max-width: 90%;
+  width:90%;
+}
+.coolyt-container iframe ,
+.coolyt-container object ,
+.coolyt-container embed {
+  height: 100% !important;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100% !important;
+}
+.coolyt-layer {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: transparent;
+}
+.coolyt-controls {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background-color: black;
+}
+.coolyt-controls .coolyt-control ,
+.coolyt-controls .coolyt-control input {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  cursor:pointer;
+  background-size: cover;
+}
+.coolyt-control {
+    display: inline-block;
+    background-size: cover;
+    opacity: 1;
+}
+.coolyt-controls.coolyt-control-volume {
+  width: 96px;
+}
+.coolyt-control.coolyt-control-timerdisplay ,
+.coolyt-control.coolyt-control-timerdisplay span {
+  right:0px;
+  position: absolute;
+  color:white;
+  width:96px;
+  height: 48px;
+  line-height: 48px;
+  vertical-align: middle;
+}
+@media screen and ( max-width: 400px ) {
+  .coolyt-controls .coolyt-control ,
+  .coolyt-controls .coolyt-control input {
+    width: 24px;
+    height: 24px;
+  }
+  .coolyt-controls.coolyt-control-volume {
+    width: 48px;
+  }
+  .coolyt-control.coolyt-control-timerdisplay ,
+  .coolyt-control.coolyt-control-timerdisplay span {
+    right:0px;
+    position: absolute;
+    color:white;
+    width:48px;
+    height: 24px;
+    line-height: 24px;
+    font-size: xx-small;
+    vertical-align: middle;
+  }
+}
+.coolyt-progress-bar input {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+}
+.coolyt-layer .coolyt-control.coolyt-control-play-pause.coolyt-layer {
+  height: 100% !important;
+  width: 100% !important;
+  background-size:auto !important;
+}
+.coolyt-control-settings ul {
+  color: white;
+  background-color: black;
+  font-size:x-small;
+  position:absolute;
+  bottom: 48px;
+  padding: 5px;
+  text-align: center;
+  margin: 0px;
+  display: block;
+}
+.coolyt-control-settings  li {
+  width: 100%;
+}
+.coolyt-control-settings li.active {
+  display: block;
+  background-color: grey;
+}
+/*Set icons*/
+.coolyt-container[ videostatus='paused' ] * .coolyt-control.coolyt-control-play-pause ,
+.coolyt-container[ videostatus='playing' ] * .coolyt-control.coolyt-control-play-pause:hover {
+  background: url( '../img/pause_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-container[ videostatus='paused' ] * .coolyt-control.coolyt-control-play-pause:hover ,
+.coolyt-container[ videostatus='playing' ] * .coolyt-control.coolyt-control-play-pause {
+  background: url( '../img/play_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-container[ soundstatus='muted' ]  .coolyt-control-mute-unmute ,
+.coolyt-container[ soundstatus='unmuted' ]  .coolyt-control-mute-unmute:hover {
+  background: url( '../img/mute_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-container[ soundstatus='muted' ]  .coolyt-control-mute-unmute:hover ,
+.coolyt-container[ soundstatus='unmuted' ]  .coolyt-control-mute-unmute {
+  background: url( '../img/unmute_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-control-settings {
+  background: url( '../img/settings_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-control-restart {
+  background: url( '../img/restart_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-control-fullscreen {
+  background: url( '../img/fullscreen_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+.coolyt-container.fullscreen .coolyt-control-fullscreen {
+  background: url( '../img/normalscreen_64x64.png' ) center center no-repeat;
+  background-size: cover;
+}
+
+.coolyt-container[ videostatus='playing' ] * .coolyt-control.coolyt-control-play-pause.coolyt-layer,
+.coolyt-container[ videostatus='playing' ] * .coolyt-control.coolyt-control-play-pause.coolyt-layer:hover {
+    background:none !important;
+}
+
+/*set visibility*/
+.coolyt-control:hover {
+  background-size: cover;
+}
+.coolyt-container[ videostatus='paused' ] .coolyt-layer {
+  background: black;
+}
+.coolyt-layer .coolyt-control ,
+.coolyt-layer .coolyt-progress-bar ,
+.coolyt-layer .coolyt-progress-bar * {
+  display:none;
+}
+.coolyt-container[ videostatus='paused' ] .coolyt-control ,
+.coolyt-container[ videostatus='paused' ] .coolyt-control.coolyt-controls.coolyt-control-timerdisplay span ,
+.coolyt-layer:hover .coolyt-control ,
+.coolyt-layer:hover .coolyt-control.coolyt-controls.coolyt-control-timerdisplay span {
+  display:inline-block;
+}
+.coolyt-container[ videostatus='paused' ] .coolyt-progress-bar ,
+.coolyt-layer .coolyt-progress-bar * {
+  display:block;
+}
+.coolyt-layer:hover ,
+.coolyt-layer:hover .coolyt-controls ,
+.coolyt-layer:hover .coolyt-controls.coolyt-control-timerdisplay span ,
+.coolyt-controls:hover ,
+.coolyt-controls:hover .coolyt-control.coolyt-control-timerdisplay span  {
+  display:inline-block;
+}
+.coolyt-layer:hover .coolyt-progress-bar ,
+.coolyt-layer:hover .coolyt-progress-bar * ,
+.coolyt-controls:hover .coolyt-progress-bar ,
+.coolyt-controls:hover .coolyt-progress-bar * {
+  display:block;
+}
+.coolyt-control-settings ul {
+  display:none;
+}
+.coolyt-control-settings:hover ul ,
+.coolyt-control-settings ul:hover {
+  display:block;
+}
+.coolyt-control-settings li {
+  display:block;
+}
+/*fullscreen*/
+.fullscreen {
+  z-index: 16777271;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+}
